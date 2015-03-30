@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalLabel: UILabel!
     
-    @IBOutlet weak var tipControl: UISegmentedControl!
-    @IBOutlet weak var percetangeSlider: UISlider!
+    @IBOutlet weak var tipAmount: UISegmentedControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +34,8 @@ class ViewController: UIViewController {
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         
-        var tipPercentages = [0.18, 0.2, 0.22]
-        var tipPercentage = Double(percetangeSlider.value)
+        var tipPercentages = [0.15, 0.18, 0.20, 0.22]
+        var tipPercentage = tipPercentages[tipAmount.selectedSegmentIndex]
         
         
         var billAmount = NSString(string: billField.text).doubleValue
